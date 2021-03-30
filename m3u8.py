@@ -30,7 +30,7 @@ class History:
         raise Exception("No m3u8 found :(")
 
 
-    def download(self, url: str, year: str, month: int, day: int):
+    def download(self, year: str, month: int, day: int, url: str = None):
         """Download De Pré History"""
         filename = f"{year}-{month:02}-{day:02}.mp4"
         found_url = url if url else self.find(year, month, day)

@@ -20,10 +20,11 @@ class History:
                 if bsec >= esec:
                     continue
                 url = f"{year}/{month}/{day}/20_De_Pr__Historie_{short_year}{month}{day}1200{bsec}_{year}{month}{day}1200{esec}_ondemand_128.mp4/20_De_Pr__Historie_{short_year}{month}{day}1200{bsec}_{year}{month}{day}1200{esec}_ondemand_128-audio=124625.m3u8"
-                rs = requests.get(f"{uri}/{url}")
+                full_url = f"{uri}/{url}"
+                rs = requests.get(full_url)
                 if rs.status_code == 200:
                     print(f"GOT IT: {url}")
-                    return url
+                    return full_url
                 else:
                     print(f"CHECKING: {url}", end="\r", flush=True)
 
